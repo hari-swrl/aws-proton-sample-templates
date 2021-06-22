@@ -1,13 +1,15 @@
 proton: ServiceSpec
 
 pipeline:
+  dockerfile: Dockerfile
   unit_test_command: "ls"
 
 instances:
   - name: "frontend-dev"
     environment: "Beta"
     spec:
-      desired_count: 2
+      desired_count: 1
       port: 80
       task_size: "medium"
+      image: 583279653324.dkr.ecr.us-east-1.amazonaws.com/awsproton-ui-cloudformation-upflmtftsmeywiq-ecrrepo-jt7zgpcq5hcx:1
       service_discovery_name: "frontend-dev"
