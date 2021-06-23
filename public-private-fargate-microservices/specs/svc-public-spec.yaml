@@ -1,8 +1,9 @@
 proton: ServiceSpec
 
 pipeline:
-  dockerfile: Dockerfile
+  dockerfile: webapp/Dockerfile
   unit_test_command: "ls"
+  project_dir: "webapp"
 
 instances:
   - name: "frontend-dev"
@@ -12,4 +13,4 @@ instances:
       port: 80
       task_size: "medium"
       image: 583279653324.dkr.ecr.us-east-1.amazonaws.com/awsproton-ui-cloudformation-upflmtftsmeywiq-ecrrepo-jt7zgpcq5hcx:1
-      service_discovery_name: "frontend-dev"
+      service_discovery_name: "frontend-project-dir"
