@@ -41,6 +41,13 @@ Resources:
                         "sha256sum -c yq_linux_amd64.sha",
                         "mv yq_linux_amd64 /usr/bin/yq",
                         "chmod +x /usr/bin/yq"
+                        "rm /root/.pyenv/shims/aws",
+                        "rm /root/.pyenv/shims/aws_completer",
+                        "rm -rf /root/.pyenv/aws-cli",
+                        "curl 'https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip' -o 'awscliv2.zip'",
+                        "unzip awscliv2.zip",
+                        "./aws/install -i /usr/local/aws-cli -b /usr/local/bin",
+                        "aws --version"
                       ]
                     },
                     "pre_build": {
@@ -72,13 +79,6 @@ Resources:
                     },
                     "post_build": {
                       "commands": [
-                        "rm /root/.pyenv/shims/aws",
-                        "rm /root/.pyenv/shims/aws_completer",
-                        "rm -rf /root/.pyenv/aws-cli",
-                        "curl 'https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip' -o 'awscliv2.zip'",
-                        "unzip awscliv2.zip",
-                        "./aws/install -i /usr/local/aws-cli -b /usr/local/bin",
-                        "aws --version",
                         "aws proton --endpoint-url https://proton.$AWS_DEFAULT_REGION.amazonaws.com --region $AWS_DEFAULT_REGION get-service --name $service_name | jq -r .service.spec > service.yaml",
                         "yq w service.yaml 'instances[*].spec.image' \"$IMAGE_ID\" > rendered_service.yaml",
                         "cat service.yaml",
