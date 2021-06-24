@@ -1,7 +1,7 @@
 proton: ServiceSpec
 
 pipeline:
-  dockerfile: webapp/Dockerfile
+  dockerfile: Dockerfile
   unit_test_command: "ls"
   project_dir: "webapp"
 
