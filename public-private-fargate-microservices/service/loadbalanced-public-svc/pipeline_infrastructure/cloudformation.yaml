@@ -40,7 +40,7 @@ Resources:
                         "wget https://github.com/mikefarah/yq/releases/download/3.4.0/yq_linux_amd64",
                         "sha256sum -c yq_linux_amd64.sha",
                         "mv yq_linux_amd64 /usr/bin/yq",
-                        "chmod +x /usr/bin/yq"
+                        "chmod +x /usr/bin/yq",
                         "rm /root/.pyenv/shims/aws",
                         "rm /root/.pyenv/shims/aws_completer",
                         "rm -rf /root/.pyenv/aws-cli",
