@@ -56,8 +56,8 @@ Resources:
                         "pwd",
                         "ls",
                         "cd $CODEBUILD_SRC_DIR",
+                        "cd {{ pipeline.inputs.project_dir }}",
                         "pwd",
-                        "echo {{ pipeline.inputs.project_dir }}"
                         "IMAGE_REPO_NAME=$repo_name",
                         "IMAGE_TAG=$CODEBUILD_BUILD_NUMBER",
                         "IMAGE_ID=
