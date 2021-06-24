@@ -1,0 +1,16 @@
+proton: ServiceSpec
+
+pipeline:
+  dockerfile: Dockerfile.dev
+  unit_test_command: "ls"
+  project_dir: "backendApi"
+
+instances:
+  - name: "backendApi"
+    environment: "Beta"
+    spec:
+      desired_count: 1
+      port: 3000
+      task_size: "medium"
+      image: 583279653324.dkr.ecr.us-east-1.amazonaws.com/awsproton-ui-cloudformation-upflmtftsmeywiq-ecrrepo-jt7zgpcq5hcx:1
+      service_discovery_name: "be-api"
