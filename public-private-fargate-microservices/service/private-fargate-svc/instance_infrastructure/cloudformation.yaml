@@ -94,7 +94,7 @@ Resources:
       TaskDefinition: !Ref 'TaskDefinition'
       ServiceRegistries:
       - RegistryArn: !GetAtt DiscoveryService.Arn
-        Port: 8080
+        Port: {{service_instance.inputs.port}}
       Tags:
         - Key: Name
           Value: !FindInMap ['EnvironmentNameConfig', 'Environment', 'Name']
