@@ -55,3 +55,9 @@ schema:
           default: "echo 'add your unit test command here'"
           minLength: 1
           maxLength: 200
+        project_dir:
+          type: string
+          description: "The directory of a project"
+          default: "webapp"
+          minLength: 3
+          maxLength: 10
