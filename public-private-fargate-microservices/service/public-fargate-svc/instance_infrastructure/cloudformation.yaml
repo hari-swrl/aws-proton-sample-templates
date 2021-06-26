@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: Deploy a backend service on AWS Fargate, hosted in a private subnet, and accessible via Service Discovery.
+Description: Fargate Service in public subnet.
 Mappings:
   EnvironmentNameConfig:
     Environment:
