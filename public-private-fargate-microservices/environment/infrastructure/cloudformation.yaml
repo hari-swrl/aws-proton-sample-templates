@@ -280,3 +280,6 @@ Outputs:
   PrivateNamespace:
     Description: The NamespaceId registered for Service Discovery
     Value: !Ref 'PrivateNamespace'
+  ServiceDiscoveryName:
+    Description: The service discovery namespace
+    Value: !Sub '${environment.inputs.service_discovery_namespace}'

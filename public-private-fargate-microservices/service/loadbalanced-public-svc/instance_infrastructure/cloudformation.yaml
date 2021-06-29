@@ -64,6 +64,9 @@ Resources:
           Image: '{{service_instance.inputs.image}}'
           PortMappings:
             - ContainerPort: '{{service_instance.inputs.port}}'
+          Environment:
+            Options:
+              SERVICE_URL: '{{ environment.outputs.ServiceDiscoveryName}}'
           LogConfiguration:
             LogDriver: 'awslogs'
             Options:
