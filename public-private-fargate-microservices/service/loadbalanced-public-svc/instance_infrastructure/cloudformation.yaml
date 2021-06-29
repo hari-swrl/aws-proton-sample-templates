@@ -63,7 +63,7 @@ Resources:
           Memory: !FindInMap [TaskSize, {{service_instance.inputs.task_size}}, memory]
           Image: '{{service_instance.inputs.image}}'
           PortMappings:
-            - ContainerPort: '{{service_instance.inputs.port}}'
+            - ContainerPort: {{service_instance.inputs.port}}
           Environment:
             Options:
               ServiceDiscoveryName: '{{ environment.outputs.ServiceDiscoveryName}}'
