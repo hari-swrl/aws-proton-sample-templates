@@ -282,4 +282,4 @@ Outputs:
     Value: !Ref 'PrivateNamespace'
   ServiceDiscoveryName:
     Description: The service discovery namespace
-    Value: !Sub '${environment.inputs.service_discovery_namespace}'
+    Value: !FindInMap ['ServiceDiscoveryConfig', 'PrivateNamespace', 'Name']
