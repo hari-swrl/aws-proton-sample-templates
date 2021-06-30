@@ -65,8 +65,8 @@ Resources:
           PortMappings:
             - ContainerPort: {{service_instance.inputs.port}}
           Environment:
-              - name: ServiceDiscoveryName
-                value: '{{ environment.outputs.ServiceDiscoveryName}}'
+              - Name: ServiceDiscoveryName
+                Value: '{{ environment.outputs.ServiceDiscoveryName}}'
           LogConfiguration:
             LogDriver: 'awslogs'
             Options:
